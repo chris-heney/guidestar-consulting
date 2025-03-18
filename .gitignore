@@ -1,39 +1,31 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+# Wordpress - Dockerified FROM https://github.com/github/gitignore/blob/main/WordPress.gitignore
+# Ignore environment variables and sensitive data
+.env
+
+# Ignore Composer vendor directory
+/vendor/
+
+# Ignore Node modules if you use them
+/node_modules/
+
+# Ignore Docker volumes and temporary files
+db_data/
+
+# Logs and OS-specific files
+*.log
+.DS_Store
+
 
 # Core
 #
 # Note: if you want to stage/commit WP core files
 # you can delete this whole section/until Configuration.
-/wp-admin/
 /wp-content/index.php
+/wp-content/uploads
+/wp-content/mysql.sql
 /wp-content/languages
 /wp-content/plugins/index.php
 /wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
-
-# Configuration
-wp-config.php
-
-# Example themes
-/wp-content/themes/twenty*/
-
-# Example plugin
-/wp-content/plugins/hello.php
-
-# Uploads
-/wp-content/uploads/
-
-# Log files
-*.log
-
-# htaccess
-/.htaccess
 
 # All plugins
 #

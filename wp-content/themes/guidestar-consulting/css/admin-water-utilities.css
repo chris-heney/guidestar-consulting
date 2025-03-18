@@ -1,0 +1,46 @@
+/* Style for the Utility Metadata Box */
+#water_utility_metadata {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Style for Field Labels */
+#water_utility_metadata label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Style for Input Fields */
+#water_utility_metadata input[type="text"],
+#water_utility_metadata input[type="number"],
+#water_utility_metadata select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#water_utility_metadata input[type="checkbox"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Style for Checkbox Labels */
+#water_utility_metadata input[type="checkbox"] + label {
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+/* Style for Save and Cancel Buttons */
+#water_utility_metadata .submitbox .button {
+    margin-right: 10px;
+}
+
+
