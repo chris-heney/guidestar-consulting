@@ -32,4 +32,7 @@ add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 // require get_stylesheet_directory() . '/inc/logout-redirect.php';
 require get_stylesheet_directory() . '/inc/water-utility.php';
 
-require get_stylesheet_directory() . '/tools/percent-efficiency-calculator/percent-efficiency-calculator.php';
+require get_stylesheet_directory() . '/tools/calculators/percent-efficiency-calculator.php';
+require get_stylesheet_directory() . '/tools/calculators/chemical-feed-adjustment-calculator.php';
+require get_stylesheet_directory() .  '/tools/calculators/stormwater-calculator.php';
+require get_stylesheet_directory() .   '/tools/calculators/avg-annual-water-loss.php';
