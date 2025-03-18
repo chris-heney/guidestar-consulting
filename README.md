@@ -130,3 +130,8 @@ Copy
 ---
 
 This **README.md** should help developers get up-and-running quickly with the WordPress development environment, detailing both setup and usage steps while referencing each component in the repository.
+
+
+## Resources ## 
+
+1. https://moruralwater.org/calculator/app/home
