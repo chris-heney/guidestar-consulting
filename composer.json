@@ -1,5 +1,6 @@
 {
-  "require-dev": {
-    "php-stubs/wordpress": "^6.0"
-  }
+    "require": {
+        "wp-cli/wp-cli": "^2.11",
+        "php-stubs/wordpress-stubs": "^6.7"
+    }
 }

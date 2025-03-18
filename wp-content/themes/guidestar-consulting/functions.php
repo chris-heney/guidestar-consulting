@@ -31,3 +31,5 @@ add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 // require get_stylesheet_directory() . '/inc/header.php';
 // require get_stylesheet_directory() . '/inc/logout-redirect.php';
 require get_stylesheet_directory() . '/inc/water-utility.php';
+
+require get_stylesheet_directory() . '/tools/percent-efficiency-calculator/percent-efficiency-calculator.php';

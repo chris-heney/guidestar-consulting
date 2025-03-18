@@ -1,26 +1,30 @@
 version: '3.8'
 
 services:
-  wordpress:
+  guidestar-wordpress:
+    container_name: guidestar-wordpress
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8000:80"
     environment:
-      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_HOST: guidestar-db:3306
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
       WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
+      PAGER: more
     volumes:
       - ./wp-content:/var/www/html/wp-content
       - ./php.ini:/usr/local/etc/php/conf.d/custom-php.ini
     depends_on:
-      - db
+      - guidestar-db
 
-  db:
+  guidestar-db:
+    container_name: guidestar-db
     image: mysql:5.7
     restart: always
+    platform: linux/x86_64
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}

@@ -1,23 +1,27 @@
 FROM wordpress:latest
 
+# Update package lists and install required packages
+RUN apt-get update && apt-get install -y curl
+
 # Install X-Debug via PECL and enable it
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 
-# (Optional) Adjust X-Debug configuration here if not mounting from custom-php.ini
-# Copy a sample custom-php.ini if you prefer to bake the settings:
-# COPY custom-php.ini /usr/local/etc/php/conf.d/
+# Install WP-CLI (latest)
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+    && chmod +x wp-cli.phar \
+    && mv wp-cli.phar /usr/local/bin/wp
 
-# Copy composer from the official Composer image
+# Copy Composer from the official Composer image
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set working directory
+# Set working directory to the WordPress installation
 WORKDIR /var/www/html
 
-# Copy the composer file to install WordPress stubs (for VSCode autocompletion)
+# Copy composer.json to install WordPress stubs (and other dev dependencies)
 COPY composer.json /var/www/html/composer.json
 
-# Install the stubs (and any additional dependencies)
+# Install Composer dependencies
 RUN composer install --no-interaction
 
 EXPOSE 80
