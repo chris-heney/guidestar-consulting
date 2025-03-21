@@ -36,3 +36,5 @@ require get_stylesheet_directory() . '/tools/calculators/percent-efficiency-calc
 require get_stylesheet_directory() . '/tools/calculators/chemical-feed-adjustment-calculator.php';
 require get_stylesheet_directory() .  '/tools/calculators/stormwater-calculator.php';
 require get_stylesheet_directory() .   '/tools/calculators/avg-annual-water-loss.php';
+require get_stylesheet_directory() .    '/tools/calculatorController.php';
+require get_stylesheet_directory() .    '/tools/calculators/disinfection-dosing-calculator.php';
